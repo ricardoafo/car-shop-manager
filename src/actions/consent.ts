@@ -16,7 +16,7 @@ type CookieConsentData = {
  */
 export async function logCookieConsent(data: CookieConsentData): Promise<void> {
   try {
-    const config = loadClientConfig('talleres-ribera');
+    const config = loadClientConfig(process.env['TENANT_ID'] ?? 'talleres-ribera');
     const pb = await getPb();
 
     await pb.collection('cookie_consents').create({
