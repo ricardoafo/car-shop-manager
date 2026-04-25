@@ -7,18 +7,18 @@
   "reviewRating": 4.9,
   "reviewCount": 124,
   "address": {
-    "street": "Polígono Industrial Cabezo Beaza, Calle Zinc 12",
+    "street": "Calle Mayor, 12",
     "city": "Cartagena",
-    "postalCode": "30353",
+    "postalCode": "30300",
     "region": "Región de Murcia",
     "country": "ES",
-    "geo": { "lat": 37.5731, "lng": -0.9945 }
+    "geo": { "lat": 37.6000, "lng": -0.9800 }
   },
   "contact": {
     "phone": "+34 968 000 000",
     "email": "info@talleresribera.example",
     "whatsapp": "+34 600000999",
-    "googleMapsUrl": "https://maps.google.com/?q=Talleres+Ribera+Cartagena"
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Talleres+Ribera+Calle+Mayor+12+30300+Cartagena"
   },
   "branding": {
     "primaryColor": "#1a1a2e",
