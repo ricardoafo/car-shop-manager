@@ -15,10 +15,10 @@
     "geo": { "lat": 37.6000, "lng": -0.9800 }
   },
   "contact": {
-    "phone": "+34 968 000 000",
+    "phone": "+34 600 000 999",
     "email": "info@talleresribera.example",
-    "whatsapp": "+34 600000999",
-    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Talleres+Ribera+Calle+Mayor+12+30300+Cartagena"
+    "whatsapp": "+34 600 000 999",
+    "googleMapsUrl": "https://maps.example/talleres-ribera"
   },
   "branding": {
     "primaryColor": "#1a1a2e",
