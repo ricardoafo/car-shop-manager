@@ -1116,20 +1116,59 @@
   transform-origin: center bottom;
 }
 
+/* One-shot fire on first paint (every page load), with asymmetric crank-angle. */
+.rbr-logo .piston-l {
+  animation: rbr-piston-fire 420ms var(--ease-mech) 200ms 1 both;
+}
+.rbr-logo .piston-r {
+  animation: rbr-piston-fire 420ms var(--ease-mech) 280ms 1 both;
+}
+.rbr-logo .ring-sweep-l {
+  animation: rbr-ring-sweep 360ms var(--ease-mech) 200ms 1 both;
+}
+.rbr-logo .ring-sweep-r {
+  animation: rbr-ring-sweep 360ms var(--ease-mech) 280ms 1 both;
+}
+
+/* Hover re-trigger using a duplicate name so the animation restarts. */
 @media (hover: hover) {
   .rbr-logo:hover .piston-l {
-    animation: rbr-piston-fire 360ms var(--ease-mech) both;
+    animation-name: rbr-piston-fire, rbr-piston-fire;
+    animation-duration: 360ms;
+    animation-delay: 0ms;
   }
   .rbr-logo:hover .piston-r {
-    animation: rbr-piston-fire 360ms var(--ease-mech) 80ms both;
+    animation-name: rbr-piston-fire, rbr-piston-fire;
+    animation-duration: 360ms;
+    animation-delay: 80ms;
   }
   .rbr-logo:hover .ring-sweep-l {
-    animation: rbr-ring-sweep 320ms var(--ease-mech) both;
+    animation-name: rbr-ring-sweep, rbr-ring-sweep;
+    animation-duration: 320ms;
+    animation-delay: 0ms;
   }
   .rbr-logo:hover .ring-sweep-r {
-    animation: rbr-ring-sweep 320ms var(--ease-mech) 80ms both;
+    animation-name: rbr-ring-sweep, rbr-ring-sweep;
+    animation-duration: 320ms;
+    animation-delay: 80ms;
   }
 }
+
+/* prefers-reduced-motion — kill both the one-shot and the hover re-trigger. */
+@media (prefers-reduced-motion: reduce) {
+  .rbr-logo .piston-l,
+  .rbr-logo .piston-r,
+  .rbr-logo .ring-sweep-l,
+  .rbr-logo .ring-sweep-r {
+    animation: none;
+  }
+}
+
+/* Lockup ribbon — service-stripe palette (amber / paper / signal-red). */
+.rbr-logo-ribbon { margin-bottom: 0.25rem; }
+.rbr-logo-stripe--amber { background: var(--color-brand-amber); }
+.rbr-logo-stripe--paper { background: var(--color-brand-paper); }
+.rbr-logo-stripe--red   { background: var(--color-brand-red); }
 
 /* RBR logo — Windows High Contrast Mode: collapse fills to system colours. */
 @media (forced-colors: active) {
@@ -1259,7 +1298,9 @@
   .rbr-logo rect,
   .rbr-logo text,
   .rbr-logo polygon { fill: CanvasText; stroke: CanvasText; }
-  .rbr-logo .rbr-logo-stripe { fill: Highlight; }
+  .rbr-logo-ribbon .rbr-logo-stripe--amber,
+  .rbr-logo-ribbon .rbr-logo-stripe--paper { background: CanvasText !important; }
+  .rbr-logo-ribbon .rbr-logo-stripe--red { background: Highlight !important; }
 }
 
 @media (prefers-reduced-motion: reduce) {
