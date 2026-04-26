@@ -47,6 +47,7 @@ jobs:
             ghcr.io/ricardoafo/car-shop-manager:sha-${{ github.sha }}
           build-args: |
             NEXT_PUBLIC_COMMIT_SHA=${{ github.sha }}
+            TENANT_ID=talleres-ribera
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
